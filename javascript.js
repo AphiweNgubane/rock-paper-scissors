@@ -1,5 +1,5 @@
-const choices= ("Rock", "Paper", "Scissors")
+function getRandomInt() {
+    return Math.floor(Math.random() * 3);
+  }
 
-function getComputerChoice(choices) {
-    console.log( Math.floor(Math.random() * 3) );
-}
+  console.log(getRandomInt())
