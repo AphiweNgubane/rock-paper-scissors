@@ -1,11 +1,11 @@
-const choices= ("Rock", "Paper", "Scissors")
+const choices= ["Rock", "Paper", "Scissors"]
 
 function getRandomInt() {
     return Math.floor(Math.random() * 3);
   }
 
 function getComputerChoice() {
-    return choices(getRandomInt());
+    return choices[getRandomInt()];
   }
 
 console.log(getComputerChoice());
