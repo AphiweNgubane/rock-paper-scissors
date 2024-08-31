@@ -13,11 +13,10 @@ console.log(getComputerChoice());
 let userInput= window.prompt("Pick one: Rock, Paper, or Scissors")
 
 function getHumanChoice() {
-  if (choices.includes(userInput)) {
-    return userInput
-  } else  {
-    alert("Invalid choice");
-    window.prompt("Please only choose one between: Rock, Paper, Scissors");
+  while (! choices.includes(userInput)) {
+    window.prompt("Invalid choice. Please only choose one between: Rock, Paper, Scissors");
   }
+
+  return userInput;
 }
 console.log(getHumanChoice())
