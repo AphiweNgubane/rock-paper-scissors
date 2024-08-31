@@ -9,3 +9,11 @@ function getComputerChoice() {
   }
 
 console.log(getComputerChoice());
+
+
+const chooseOption= window.prompt("Pick one: Rock, Paper, or Scissors")
+function getHumanChoice() {
+    return chooseOption;
+}
+
+console.log(chooseOption)
