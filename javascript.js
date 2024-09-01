@@ -25,13 +25,15 @@ console.log(getHumanChoice())
 
 let humanScore= 0;
 let computerScore= 0;
+const addHumanScore= ++humanScore;
+const addComputerScore= ++computerScore;
      
 
 function playRound(humanChoice, computerChoice){
     if (humanChoice = computerChoice) {
-      ++humanScore;
-      ++computerScore;
-      console.log('It is a draw. You have: ${humanScore} points, computer has: ${computerScore} points');
+      addHumanScore;
+      addComputerScore;
+      console.log("It is a draw. Your score:", addHumanScore, "computer has:",  addComputerScore);
     }
 }
 
