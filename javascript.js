@@ -33,7 +33,37 @@ function playRound(humanChoice, computerChoice){
     if (humanChoice === computerChoice) {
       addHumanScore;
       addComputerScore;
-      console.log("It is a draw. Your score:", addHumanScore, "computer has:",  addComputerScore);
+      console.log("It is a draw. Your score:", addHumanScore, "computer:",  addComputerScore);
+    } 
+    
+    else if (humanChoice === "rock" && computerChoice === "scissors"){
+      addHumanScore;
+      console.log("You win! Rock beats Scissors. Your score:", addHumanScore, "computer:",  addComputerScore);
+    }
+
+    else if (humanChoice === "paper" && computerChoice === "rock"){
+      addHumanScore;
+      console.log("You win! Paper beats Rock. Your score:", addHumanScore, "computer:",  addComputerScore);
+    }
+
+    else if (humanChoice === "scissors" && computerChoice === "paper"){
+      addHumanScore;
+      console.log("You win! Scissors beats Paper. Your score:", addHumanScore, "computer:",  addComputerScore);
+    }
+
+    else if (humanChoice === "scissors" && computerChoice === "rock"){
+      addComputerScore;
+      console.log("You lose! Rock beats Scissors. Your score:", addHumanScore, "computer:",  addComputerScore);
+    }
+
+    else if (humanChoice === "rock" && computerChoice === "paper"){
+      addComputerScore;
+      console.log("You lose! Paper beats Rock. Your score:", addHumanScore, "computer:",  addComputerScore);
+    }
+
+    else if (humanChoice === "paper" && computerChoice === "scissors"){
+      addComputerScore;
+      console.log("You lose! Scissors beats Paper. Your score:", addHumanScore, "computer:",  addComputerScore);
     }
 }
 
