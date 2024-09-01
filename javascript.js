@@ -30,7 +30,7 @@ const addComputerScore= ++computerScore;
      
 
 function playRound(humanChoice, computerChoice){
-    if (humanChoice = computerChoice) {
+    if (humanChoice === computerChoice) {
       addHumanScore;
       addComputerScore;
       console.log("It is a draw. Your score:", addHumanScore, "computer has:",  addComputerScore);
