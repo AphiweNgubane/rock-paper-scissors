@@ -24,24 +24,32 @@ function getHumanChoice() {
 
 let humanScore= 0;
 let computerScore= 0;
-const addHumanScore= ++humanScore;
-const addComputerScore= ++computerScore;
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-      console.log("It is a draw. You both chose: " + humanChoice);
+      ++humanScore;
+      ++computerScore;
+      console.log("It is a draw. You both chose: " + humanChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore);
     } 
 
     else if (humanChoice === "rock" && computerChoice === "scissors") {
-      console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+      ++humanScore;
+      console.log("You win! " + humanChoice + " beats " + computerChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore)
     }
     
     else if (humanChoice === "paper" && computerChoice === "rock") {
-      console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+      ++humanScore;
+      console.log("You win! " + humanChoice + " beats " + computerChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore)
+    }
+
+    else if (humanChoice === "scissors" && computerChoice === "paper") {
+      ++humanScore;
+      console.log("You win! " + humanChoice + " beats " + computerChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore)
     }
 
     else {
-      console.log("You lose. " + computerChoice + " beats " + humanChoice + ".")
+      ++computerScore;
+      console.log("You lose. " + computerChoice + " beats " + humanChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore)
     }
   }
 
