@@ -20,24 +20,29 @@ function getHumanChoice() {
 
   return userInput;
 }
-console.log(getHumanChoice())
+
 
 let humanScore= 0;
 let computerScore= 0;
 const addHumanScore= ++humanScore;
 const addComputerScore= ++computerScore;
-  
-
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-      console.log("It is a draw.");
+      console.log("It is a draw. You both chose: " + humanChoice);
     } 
 
-    else {
-      console.log("Not a draw. Let's move onto next.")
+    else if (humanChoice === "rock" && computerChoice === "scissors") {
+      console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
     }
     
+    else if (humanChoice === "paper" && computerChoice === "rock") {
+      console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+    }
+
+    else {
+      console.log("You lose. " + computerChoice + " beats " + humanChoice + ".")
+    }
   }
 
 const humanSelection= getHumanChoice();
