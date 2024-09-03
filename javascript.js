@@ -23,10 +23,32 @@ function getHumanChoice() {
 
 
 
-
-function playgame {
+function playgame () {
   let humanScore= 0;
   let computerScore= 0;
+
+  for (let round = 1; round <= 5; round++) {
+    console.log("Round", round);
+  }
+
+  const humanSelection= getHumanChoice();
+  const computerSelection= getComputerChoice();
+
+  let result= playRound(humanSelection, computerSelection);
+
+  if (result === "draw") {
+    console.log("It was a draw.");
+  } 
+
+  else if (result === "human") {
+    console.log("You won this round!")
+  }
+
+  else if (result === "computer") {
+    console.log("Computer won this round!")
+  }
+
+  console.log("Current score- You:", humanScore, "Computer:", computerScore);
 
   function playRound(humanChoice, computerChoice) {
       if (humanChoice === computerChoice) {
@@ -55,10 +77,6 @@ function playgame {
         console.log("You lose. " + computerChoice + " beats " + humanChoice)
       }
     }
-
-  const humanSelection= getHumanChoice();
-  const computerSelection= getComputerChoice();
+  }
 
   playRound(humanSelection, computerSelection);
-
-}
