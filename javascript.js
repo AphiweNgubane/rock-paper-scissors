@@ -23,7 +23,7 @@ function getHumanChoice() {
 
 
 
-function playgame () {
+function playGame () {
   let humanScore= 0;
   let computerScore= 0;
 
@@ -50,33 +50,40 @@ function playgame () {
 
   console.log("Current score- You:", humanScore, "Computer:", computerScore);
 
+
+
   function playRound(humanChoice, computerChoice) {
       if (humanChoice === computerChoice) {
         ++humanScore;
         ++computerScore;
-        console.log("It is a draw. You both chose: " + humanChoice);
+        return "draw";
+        console.log("You both chose: " + humanChoice);
       } 
 
       else if (humanChoice === "rock" && computerChoice === "scissors") {
         ++humanScore;
-        console.log("You win! " + humanChoice + " beats " + computerChoice)
+        return "human"
+        console.log(humanChoice + " beats " + computerChoice)
       }
       
       else if (humanChoice === "paper" && computerChoice === "rock") {
         ++humanScore;
-        console.log("You win! " + humanChoice + " beats " + computerChoice)
+        return "human"
+        console.log(humanChoice + " beats " + computerChoice)
       }
 
       else if (humanChoice === "scissors" && computerChoice === "paper") {
         ++humanScore;
-        console.log("You win! " + humanChoice + " beats " + computerChoice)
+        return "human"
+        console.log(humanChoice + " beats " + computerChoice)
       }
 
       else {
         ++computerScore;
-        console.log("You lose. " + computerChoice + " beats " + humanChoice)
+        return "computer"
+        console.log( computerChoice + " beats " + humanChoice)
       }
     }
   }
 
-  playRound(humanSelection, computerSelection);
+playGame();
