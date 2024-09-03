@@ -22,41 +22,43 @@ function getHumanChoice() {
 }
 
 
-let humanScore= 0;
-let computerScore= 0;
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-      ++humanScore;
-      ++computerScore;
-      console.log("It is a draw. You both chose: " + humanChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore);
-    } 
 
-    else if (humanChoice === "rock" && computerChoice === "scissors") {
-      ++humanScore;
-      console.log("You win! " + humanChoice + " beats " + computerChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore)
+function playgame {
+  let humanScore= 0;
+  let computerScore= 0;
+
+  function playRound(humanChoice, computerChoice) {
+      if (humanChoice === computerChoice) {
+        ++humanScore;
+        ++computerScore;
+        console.log("It is a draw. You both chose: " + humanChoice);
+      } 
+
+      else if (humanChoice === "rock" && computerChoice === "scissors") {
+        ++humanScore;
+        console.log("You win! " + humanChoice + " beats " + computerChoice)
+      }
+      
+      else if (humanChoice === "paper" && computerChoice === "rock") {
+        ++humanScore;
+        console.log("You win! " + humanChoice + " beats " + computerChoice)
+      }
+
+      else if (humanChoice === "scissors" && computerChoice === "paper") {
+        ++humanScore;
+        console.log("You win! " + humanChoice + " beats " + computerChoice)
+      }
+
+      else {
+        ++computerScore;
+        console.log("You lose. " + computerChoice + " beats " + humanChoice)
+      }
     }
-    
-    else if (humanChoice === "paper" && computerChoice === "rock") {
-      ++humanScore;
-      console.log("You win! " + humanChoice + " beats " + computerChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore)
-    }
 
-    else if (humanChoice === "scissors" && computerChoice === "paper") {
-      ++humanScore;
-      console.log("You win! " + humanChoice + " beats " + computerChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore)
-    }
+  const humanSelection= getHumanChoice();
+  const computerSelection= getComputerChoice();
 
-    else {
-      ++computerScore;
-      console.log("You lose. " + computerChoice + " beats " + humanChoice + ". Your points: " + humanScore + " | Computer points: " + computerScore)
-    }
-  }
+  playRound(humanSelection, computerSelection);
 
-const humanSelection= getHumanChoice();
-const computerSelection= getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-console.log("human: ", humanSelection);
-console.log("computer: ", computerSelection);
+}
