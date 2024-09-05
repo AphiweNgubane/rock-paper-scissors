@@ -2,23 +2,10 @@ const choices= ["rock", "paper", "scissors"]
 
 function getRandomInt() {
     return Math.floor(Math.random() * 3);
-  }
+}
 
 function getComputerChoice() {
     return choices[getRandomInt()];
-  }
-
-
-let userInput= window.prompt("Pick one: Rock, Paper, or Scissors");
-userInput= userInput.toLowerCase();
-
-function getHumanChoice() {
-  while (! choices.includes(userInput)) {
-    userInput=window.prompt("Invalid choice. Please only choose one between: Rock, Paper, Scissors");
-    userInput= userInput.toLowerCase();
-  }
-
-  return userInput;
 }
 
 
@@ -30,7 +17,17 @@ function playGame () {
   for (let round = 1; round <= 5; round++) {
     console.log("Round", round);
 
-    const humanSelection= getHumanChoice();
+    let humanSelection;
+    while (true) {
+      humanSelection= prompt("Round " + round + ": Please choose rock, paper, or scissors:").toLowerCase();
+      if (humanSelection === "rock" || humanSelection === "paper" || humanSelection === "scissors") {
+        break;
+      }
+      else {
+        console.log("Invalid choice. Please choose either rock, paper, or scissors.");
+      }
+    }
+
     const computerSelection= getComputerChoice();
     console.log("You chose:", humanSelection, "| Computer chose:", computerSelection )
 
